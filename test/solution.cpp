@@ -1,0 +1,17 @@
+#include "catch2/catch_all.hpp"
+#include "solution.h"
+
+using namespace std;
+
+
+TEST_CASE("Validate RK") {
+
+    CHECK(rabinKarp("asfff", "aesedsfdsffsfsfsd") == -1 );
+    CHECK(rabinKarp("a", "asdfddsaaaasd") == 0 );
+    CHECK(rabinKarp("asd", "a s d f w e DSA ASD   ASD ASDPOW") == -1);
+    const char longText[] = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Nam posuere eu diam vitae efficitur. Nam metus nisl sollicitudin at dui eu fermentum porttitor ex. Etiam id malesuada nunc. Curabitur euismod enim ante vitae pulvinar enim fermentum nec. Vivamus justo dolor vestibulum vel eleifend ac aliquam non tortor. Cras sit amet risus eu nibh pretium gravida quis eget lorem. Nulla at dui molestie ullamcorper nisi at pellentesque orci. Ut placerat id leo quis rutrum. Sed ac pellentesque tellus at rutrum ante. Sed nec venenatis metus iaculis aliquet felis. In congue fringilla turpis vel varius ipsum mattis non. Morbi placerat nisi in mattis ullamcorper metus turpis condimentum ligula ut posuere justo metus nec risus. Nunc urna nisi vestibulum rhoncus tincidunt quis euismod pharetra mauris. Phasellus iaculis ligula quis turpis viverra pharetra. Pellentesque lobortis dolor ut dapibus sagittis. Nunc sed leo nec diam egestas ultrices. Praesent porta iaculis convallis. In ut arcu nunc. Nulla sollicitudin venenatis dignissim. Vivamus molestie sagittis varius. Pellentesque laoreet ex urna a gravida lectus suscipit a. Fusce congue sapien vel tellus laoreet ultricies eu at ipsum. Vivamus congue blandit auctor. Donec venenatis magna ac dolor tempor laoreet ullamcorper nibh porta. Nullam eget sollicitudin turpis eu elementum magna. Fusce hendrerit ultrices tellus eu varius lorem mattis ut. Vestibulum tellus urna rutrum ultricies nisl vitae ultrices congue sapien. Ut velit tortor laoreet vel molestie sit amet interdum ac nisi. Nulla facilisis neque dapibus vestibulum vulputate justo enim elementum nisl ac congue arcu nunc id ligula. Curabitur sit amet elementum massa. Sed a orci vitae lacus pulvinar porttitor. Vivamus sagittis rhoncus aliquam. Aliquam nec justo vel sem pellentesque lobortis. Aenean et blandit erat. Proin egestas augue vel leo accumsan finibus. Mauris nec purus ut enim congue sodales. Nullam felis est placerat quis libero a scelerisque rhoncus eros. Ut magna ipsum gravida a ligula quis porta finibus ligula. Curabitur elementum purus sit amet volutpat bibendum. Proin id mattis massa. Pellentesque ligula libero venenatis at ante ac lacinia tempus orci. Cras dapibus venenatis magna quis scelerisque neque bibendum cursus. Nunc hendrerit erat eu mauris aliquam faucibus. Nullam sodales est nisi a eleifend diam commodo a. Maecenas ultricies semper massa eu dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam ac mauris id lectus sodales venenatis. Quisque in mauris quis risus rhoncus rutrum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi sollicitudin tortor rutrum nisi pulvinar volutpat. Vivamus laoreet mattis sapien eu blandit dolor consectetur eu. Mauris quam urna porta vel velit in mollis semper libero. Aliquam commodo nisl at quam elementum vel bibendum purus auctor. Nam eu eleifend leo.";
+    CHECK(rabinKarp("nothing", longText) == -1);
+    CHECK(rabinKarp("vulputate", longText) == 1573);
+    CHECK(rabinKarp("scelerisque", longText) == 1953);
+    CHECK(rabinKarp("ipsum dolor", longText) == 6);
+}
