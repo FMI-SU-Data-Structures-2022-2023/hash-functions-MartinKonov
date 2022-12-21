@@ -1,6 +1,7 @@
 #ifndef WEEK11_HASH_H
 #include<string>
 #include <map>
+#include <cmath>
 
 long long Hash(std::string str);
 long long RollingHash(std::string prev, long long H, char nxt);
